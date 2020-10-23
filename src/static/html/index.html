@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script type='text/javascript' src="/static/js/bootstrap.bundle.min.js"></script>  
+    <style>
+        body {
+            padding: 3rem;
+        }
+        #todo-form {
+            width: 32rem;
+        }
+
+        #todo-info {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            width: 32rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimum TODO app</h1>
+    <h2>Add TODO</h2>
+    <table id="todo-info" class="table">
+        <thead>
+            <tr><th>Server Platform Info</th><th></th></tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <form id='todo-form'>
+        <div class="form-group">
+            <label for="todo-form-title">Todo Title</label>
+            <input id="todo-form-title" class="form-control" name='title' type='text'>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="todo-form-content">Todo Content</label>
+            <textarea id="todo-form-content" class="form-control" name='content'></textarea>    
+        </div>
+    </form>
+    <button id="todo-form-submit" class="btn btn-primary">submit</button>
+    <hr>
+    <h2>TODO list</h2>
+    <div id="todo-list">
+    </div>
+    <script type='text/javascript' src='/static/js/index.js'></script>
+</body>
+</html>
