@@ -32,7 +32,7 @@ yarn
 ```bash
 # I use docker container to run PostgreSQL in my environment.
 # You can type following command on command line to start a PostgreSQL container with default user and db created.
-# It will start a PostgreSQL and map the host port 5434 to container 5432 port.
+# It will start a PostgreSQL container and map the host port 5434 to container port 5432.
 docker run \
 -d \
 -e POSTGRES_DB=todoapp \
@@ -48,13 +48,16 @@ postgres
 # use psql to connect to db
 psql -h 0.0.0.0 -p 5434 -d todoapp -U test
 
-# you should see a prompt asking for password, just type "test".
+# you should see a prompt asking for password, just type "test" and hit enter.
 # after connect to the db, run following sql query.
 CREATE TABLE todos (
     ID SERIAL PRIMARY KEY,
     Title varchar(100) NOT NULL,
     Content varchar(500),
 );
+
+# exit psql
+\q
 ```
 
 #### 6. Start server
