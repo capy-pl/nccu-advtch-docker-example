@@ -1,0 +1,9 @@
+node-modules
+docker
+.vscode
+
+*.Dockerfile
+*.yml
+yarn-error.log
+yarn.lock
+README.md
