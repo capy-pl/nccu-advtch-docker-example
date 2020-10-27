@@ -53,7 +53,7 @@ psql -h 0.0.0.0 -p 5434 -d todoapp -U test
 CREATE TABLE todos (
     ID SERIAL PRIMARY KEY,
     Title varchar(100) NOT NULL,
-    Content varchar(500),
+    Content varchar(500)
 );
 
 # exit psql
