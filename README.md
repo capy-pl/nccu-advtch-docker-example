@@ -73,3 +73,38 @@ yarn start
 ### Prerequisite(docker)
 
 1. Docker
+
+2. Build the Dockerfile
+    - db.Dockerfile
+        ```sh
+        docker build \
+            -t todo-db:1.0.0 \
+            -f ./db.Dockerfile \
+            .
+        ```
+    - server.Dockerfile
+        ```sh
+        docker build \
+            -t todo-server:1.0.0 \
+            -f ./server.Dockerfile \
+            .
+        ```
+    
+3. Run containers
+    - DB
+        ```sh
+        docker run -d \
+            --name todo-db \
+            -p 5433:5432 \
+            todo-db:1.0.0
+        ```
+    - Server
+        ```sh
+        docker run -d \
+            --name todo-server \
+            -e PGHOST=todo-db \
+            -p 3001:3000 \
+            --link todo-db \
+            todo-server:1.0.0
+        ```
+4. Open your browser and type `localhost:3001`
