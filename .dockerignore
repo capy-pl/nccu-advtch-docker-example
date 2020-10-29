@@ -1,5 +1,4 @@
-node-modules
-docker
+node_modules
 .vscode
 
 *.Dockerfile
